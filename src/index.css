@@ -1,0 +1,207 @@
+
+@import "tailwindcss";
+
+@plugin "daisyui";
+
+/* Custom scrollbar for modern look - Better for laptop screens */
+.scroll-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.scroll-container::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.scroll-container::-webkit-scrollbar-thumb {
+  background: #d1d5db;
+  border-radius: 4px;
+}
+
+.scroll-container::-webkit-scrollbar-thumb:hover {
+  background: #9ca3af;
+}
+
+.scroll-container {
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #d1d5db transparent;
+  height: 100%;
+}
+
+/* Laptop specific scrollbar improvements */
+@media (min-width: 1024px) {
+  .scroll-container::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  .scroll-container::-webkit-scrollbar-thumb {
+    background: #d1d5db;
+    border-radius: 5px;
+  }
+
+  .scroll-container::-webkit-scrollbar-thumb:hover {
+    background: #9ca3af;
+  }
+}
+
+/* Dark mode scrollbar */
+.dark .scroll-container::-webkit-scrollbar-thumb {
+  background: #4b5563;
+}
+
+.dark .scroll-container::-webkit-scrollbar-thumb:hover {
+  background: #6b7280;
+}
+
+.dark .scroll-container {
+  scrollbar-color: #4b5563 transparent;
+}
+
+/* Modern responsive design */
+@media (max-width: 1024px) {
+  /* Mobile-first approach */
+  html, body {
+    overflow-x: hidden;
+  }
+
+  /* Better touch targets */
+  button, .cursor-pointer {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  /* Prevent zoom on iOS */
+  input[type="text"],
+  input[type="email"],
+  input[type="password"] {
+    font-size: 16px;
+  }
+
+  /* Mobile header improvements */
+  .mobile-header {
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+
+  /* Mobile menu improvements */
+  .mobile-menu {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  }
+
+  /* Smooth scrolling on mobile */
+  .scroll-container {
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+/* Modern mobile animations */
+@keyframes slideInFromLeft {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInFromRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-10px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.animate-slide-in-left {
+  animation: slideInFromLeft 0.3s ease-out;
+}
+
+.animate-slide-in-right {
+  animation: slideInFromRight 0.3s ease-out;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.2s ease-out;
+}
+
+.animate-slide-down {
+  animation: slideDown 0.2s ease-out;
+}
+
+/* Modern focus states */
+.focus-ring:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.1);
+  border-color: #22c55e;
+}
+
+/* Smooth transitions for all interactive elements */
+button, input, .cursor-pointer {
+  transition: all 0.2s ease-in-out;
+}
+
+/* Modern shadow for elevated elements */
+.modern-shadow {
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+}
+
+.modern-shadow-lg {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+/* Message bubble styles (for future use) */
+.message-bubble {
+  max-width: 70%;
+  word-wrap: break-word;
+  border-radius: 18px;
+  padding: 8px 12px;
+  margin: 4px 0;
+}
+
+.message-sent {
+  background-color: #dcf8c6;
+  margin-left: auto;
+  border-bottom-right-radius: 4px;
+}
+
+.message-received {
+  background-color: white;
+  margin-right: auto;
+  border-bottom-left-radius: 4px;
+}
+
+.dark .message-sent {
+  background-color: #005c4b;
+  color: white;
+}
+
+.dark .message-received {
+  background-color: #1f2937;
+  color: white;
+}
+

@@ -28,7 +28,7 @@ const GetAllUser = () => {
         const res = await API.get("/api/getUserInfo", {
            credentials: true,
           headers: {
-            Authorization: `Bearer ${token}`,
+            // Authorization: `Bearer ${token}`,
             
             "Content-Type": "application/json"
            

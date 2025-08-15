@@ -29,6 +29,8 @@ const GetAllUser = () => {
            credentials: true,
           headers: {
             Authorization: `Bearer ${token}`,
+            
+            "Content-Type": "application/json"
            
           }
           

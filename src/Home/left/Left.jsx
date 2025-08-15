@@ -10,12 +10,15 @@ import toast from "react-hot-toast";
 const Left = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const [loading, setLoading] = useState(false)
+
   const { selectedConversation } = useConversation()
 
   const handleLogout = async () => {
     setLoading(true);
     try {
       const res = await API.post("/api/user/logout");
+      console.log(res);
+      
       localStorage.removeItem("message");
       Cookies.remove("token");
       toast.success("Logout Successfully");

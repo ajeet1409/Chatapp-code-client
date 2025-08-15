@@ -1,5 +1,5 @@
 import User from './User'
-import GetAllUser from '../../Context/getAllUser'
+import GetAllUser from '../../Context/GetAllUser.jsx'
 
 const Users = ({ onMobileSelect }) => {
   const [ allUser , loading] = GetAllUser();

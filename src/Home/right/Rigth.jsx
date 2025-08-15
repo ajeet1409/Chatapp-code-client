@@ -64,8 +64,8 @@ const NoChat=()=>{
             Welcome to Chats for Fun
           </h2>
           <p className='text-base lg:text-lg mb-6 text-gray-600 dark:text-gray-400 leading-relaxed'>
-            Send and receive messages without keeping your phone online.<br/>
-            Use Chats for Fun on up to 4 linked devices and 1 mobile phone.
+            No conversation selected!<br/>
+           select to chat with User
           </p>
 
           {/* Mobile instruction */}

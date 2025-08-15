@@ -14,7 +14,7 @@ const User = ({user, onMobileSelect}) => {
 
   const handleUserSelect = () => {
     setSelectedConversation(user)
-    // Close mobile menu when a user is selected
+    // *Close mobile menu when a user is selected
     if (onMobileSelect) onMobileSelect()
   }
 

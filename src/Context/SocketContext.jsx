@@ -12,23 +12,27 @@ export const SocketProvider = ({ children }) => {
 
   useEffect(() => {
     if (authUser) {
-      const socket = io("http://localhost:3000", {
+      // Initialize socket.io-client with backend URL and userId as query parameter
+      const socket = io(import.meta.env.VITE_BACKEND_URL, {
+        withCredentials: true,
         query: {
           userId: authUser?.authUser?.user?.userId,
         },
+        
+        
       });
       setSocket(socket);
 
       socket.on("getonline", (users) => {
         setOnlineUsers(users);
 
-        console.log("client diconnect", socket.id);
+        console.log("client disconnect", socket.id);
       });
-      return ()=>socket.close()
+      return () => socket.close();
     }else{
       if(socket){
         socket.close();
-        setSocket(null)
+        setSocket(null);
 
       }
     }
@@ -36,7 +40,7 @@ export const SocketProvider = ({ children }) => {
   }, [authUser]);
 
   return (
-    <SocketContext.Provider value={{ socket,onlineUsers}}>
+    <SocketContext.Provider value={{ socket, onlineUsers }}>
       {children}
     </SocketContext.Provider>
   );

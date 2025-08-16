@@ -26,7 +26,7 @@ const GetAllUser = () => {
         //   return;
         // }
         const res = await API.get("/api/getUserInfo", {
-           credentials: true,
+       credentials: "include",
           headers: {
             // Authorization: `Bearer ${token}`,
             
